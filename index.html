@@ -9,6 +9,9 @@
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="icons/icon-192.svg">
+<!-- cargarmos fontawesome para iconitos-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">    <link rel="stylesheet" href="style-menu.css">
+
     <link rel="stylesheet" href="styles.css">
     <title>BD Tracker</title>
   </head>
@@ -78,7 +81,7 @@
           </form>
         </section>
 
-        <section class="panel">
+        <section id="consultas" class="panel">
           <div class="section-heading">
             <div>
               <p class="eyebrow">Filtros</p>
@@ -159,7 +162,7 @@
           </form>
         </section>
 
-        <section class="panel">
+        <section id="tiendas" class="panel">
           <div class="section-heading">
             <div>
               <p class="eyebrow">Tiendes</p>
@@ -183,6 +186,43 @@
         </section>
       </main>
     </div>
+
+
+<!-- menu -->
+ 
+    <div id="menu-app">
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#tiendas">
+                        <i class="fa-solid fa-shop"></i>
+                        <span>Tienda</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#coleccion">
+                        <i class="fa-solid fa-book"></i></i>
+                        <span>Colección</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+ <!-- fin de menu -->
+
+
+
+ <footer>
+  hola  
+ </footer>
+
 
     <script src="bdColeccion.js"></script>
     <script src="app.js"></script>
