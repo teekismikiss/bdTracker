@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#c65d2e">
+  <meta name="description" content="Xestiona la to coleición de BD y TU repertorio de tiendas de cómic.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- cargarmos fontawesome para iconitos-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <title>BD Tracker</title>
+</head>
+
+
+
+<title>BD Tracker</title>
+</head>
+
+<body>
+
+<section id="tiendas" class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Tiendes</p>
+            <h2>Consulta y borra</h2>
+          </div>
+        </div>
+
+        <div class="filters-grid compact">
+          <label for="filtro-pais">Filtrar por país</label>
+          <select id="filtro-pais">
+            <option value="todos">Tolos países</option>
+          </select>
+
+          <label for="filtro-ciudad">Filtrar por ciudá</label>
+          <select id="filtro-ciudad">
+            <option value="todas">Toles ciudaes</option>
+          </select>
+        </div>
+
+        <ul id="lista-tiendas-guardadas" class="store-list"></ul>
+
+        <a href="tiendas.html" class="primary-btn add-btn" aria-label="Añadir tienda">+</a>
+
+      </section>
+       <script src="app.js"></script>
+        <script src="bdColeccion.js"></script>
