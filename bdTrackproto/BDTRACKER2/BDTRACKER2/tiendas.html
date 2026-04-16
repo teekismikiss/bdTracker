@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#c65d2e">
+  <meta name="description" content="Xestiona la to coleición de BD y TU repertorio de tiendas de cómic.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+  <title>BD Tracker</title>
+</head>
+<body class="form-page">
+  <main class="form-shell">
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Repertoriu</p>
+          <h2>Añadir tienda</h2>
+        </div>
+      </div>
+
+      <form id="form-tienda" class="stack-form">
+        <label for="nombre-tienda">Nome</label>
+        <input type="text" id="nombre-tienda" name="nombre" placeholder="Librairie du Centre" required>
+
+        <label for="direccion-tienda">Direición</label>
+        <input type="text" id="direccion-tienda" name="direccion" placeholder="12 Rue de la BD" required>
+
+        <label for="selector-pais">País</label>
+        <select id="selector-pais" name="pais" required>
+          <option value="">-- Escueye un país --</option>
+        </select>
+
+        <label for="selector-ciudad">Ciudá</label>
+        <select id="selector-ciudad" name="ciudad" required disabled>
+          <option value="">-- Primero escueye país --</option>
+        </select>
+
+        <button type="submit" class="primary-btn">Guardar tienda</button>
+      </form>
+    </section>
+  </main>
+
+  <div id="menu-app">
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html">
+            <i class="fa-solid fa-house" style="color:#D96B34;"></i>
+          </a>
+        </li>
+        <li>
+          <a href="tiendas.html">
+            <i class="fa-solid fa-shop" style="color:#D96B34;"></i>
+          </a>
+        </li>
+        <li>
+          <a href="nuevabd.html">
+            <i class="fa-solid fa-book" style="color:#D96B34;"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</body>
+</html>
