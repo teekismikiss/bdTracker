@@ -1,0 +1,46 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#c65d2e">
+  <meta name="description" content="Xestiona la to coleición de  D y TU repertorio de tiendas de cómic.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>BD Tracker</title>
+</head>
+<body class="listado form-page">
+  <main class="main-grid">
+ <div class="table-shell">
+    <div class="result-summary" id="resumen-bd">
+      <img src="" alt="">
+      <h2 class="titulu"><strong></strong> <span id="resumen-serie">-</span></h2>
+      <p><strong></strong> <span id="resumen-autor">-</span></p>
+      <p><strong>Ed:</strong> <span id="resumen-editorial">-</span></p>
+    </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Títulu</th>
+                <th>Estáu</th>
+                <th>Tieneslu</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-bd"></tbody>
+
+          </table>
+         
+        </div>
+          <a href="index.html#coleccion" class="primary-btn add-btn" aria-label="Volver a la búsqueda"><i class="fa-solid fa-circle-arrow-left"></i></a>
+  </main>
+          <script defer src="bdColeccion.js"></script>
+  <script defer src="app.js"></script>
+</body>
+        </html>
