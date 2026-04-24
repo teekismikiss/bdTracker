@@ -2,236 +2,171 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#c65d2e">
-  <meta name="description" content="Xestiona la to coleición de BD y TU repertorio de tiendas de cómic.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#c65d2e">
+    <meta name="description" content="Xestiona la to coleición de BD y TU repertorio de tiendas de cómic.">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icons/icon-192.svg">
+    <link rel="stylesheet" href="style.css">
 
-  <!---->
-  <link rel="icon" type="image/png" href="./icons/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="./icons/favicon.svg" />
-  <link rel="shortcut icon" href="./icons/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="BDTracker" />
-  <link rel="manifest" href="./site.webmanifest" />
+    <!-- cargarmos fontawesome para iconitos-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>BD Tracker</title>
+</head>
 
-  <!-- cargarmos fontawesome para iconitos-->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css">
-  <title>BD Tracker</title>
+
+
+<title>BD Tracker</title>
 </head>
 
 <body>
-  <div class="app-shell">
-    <header class="hero">
-      <div>
-        <p class="eyebrow">Coleición de BD</p>
-        <h1>BD Tracker</h1>
-        <p class="hero-copy">
-          Controla la to coleición, marca qué tomos tienes y
-          guarda tiendes de cómic por país y ciudá.
-        </p>
-      </div>
-      <div class="hero-stats" id="resumen-app">
-        <article>
-          <span class="stat-label">Tomos</span>
-          <strong id="stat-total">0</strong>
-        </article>
-        <article>
-          <span class="stat-label">Na to coleición</span>
-          <strong id="stat-propios">0</strong>
-        </article>
-        <article>
-          <span class="stat-label">Tiendes</span>
-          <strong id="stat-tiendas">0</strong>
-        </article>
-      </div>
-    </header>
+    <div class="app-shell">
+        <header class="hero">
+            <div>
+                <p class="eyebrow">Coleición de BD</p>
+                <h1>BD Tracker</h1>
+                <p class="hero-copy">
+                    ¡A por toles!
+                </p>
+            </div>
+            <div class="hero-stats" id="resumen-app">
+                <article>
+                    <span class="stat-label">Tomos</span>
+                    <strong id="stat-total">0</strong>
+                </article>
+                <article>
+                    <span class="stat-label">Na to coleición</span>
+                    <strong id="stat-propios">0</strong>
+                </article>
+                <article>
+                    <span class="stat-label">Tiendes</span>
+                    <strong id="stat-tiendas">0</strong>
+                </article>
+            </div>
+        </header>
 
-    <main class="main-grid">
-      <section class="panel">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Coleición</p>
-            <h2>Añadir BD</h2>
-          </div>
-        </div>
-
-        <form id="form-comic" class="stack-form">
-          <label for="serie">Serie</label>
-          <input type="text" id="serie" name="serie" placeholder="Natacha" required>
-
-          <label for="titulu">Títulu</label>
-          <input type="text" id="titulu" name="titulu" placeholder="Le Grand pari" required>
-
-          <label for="autor">Autor/a</label>
-          <input type="text" id="autor" name="autor" placeholder="Walthéry" required>
-
-          <label for="editorial">Editorial</label>
-          <input type="text" id="editorial" name="editorial" placeholder="Dupuis">
-
-          <label for="estau">Estáu del tomu</label>
-          <select id="estau" name="estau">
-            <option value="nuevu">Nuevu</option>
-            <option value="como-nuevu">Como nuevu</option>
-            <option value="bon-estau">Bon estáu</option>
-            <option value="gastau">Gastáu</option>
-          </select>
-
-          <label class="check-row" for="tieneslu">
-            <input type="checkbox" id="tieneslu" name="tieneslu">
-            <span>¿Yá lu tienes?</span>
-          </label>
-
-          <button type="submit" class="primary-btn">Guardar na coleición</button>
-        </form>
-      </section>
-
-      <section id="coleccion" class="panel">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Filtros</p>
-            <h2>Consultar BD</h2>
-          </div>
-        </div>
-
-        <div class="filters-grid">
-          <label for="buscador-bd">Buscar</label>
-          <input type="search" id="buscador-bd" placeholder="Serie, títulu, autor, editorial...">
-
-          <label for="filtro-serie">Serie</label>
-          <select id="filtro-serie">
-            <option value="todas">Toles series</option>
-          </select>
-
-          <label for="filtro-estado">Estáu</label>
-          <select id="filtro-estado">
-            <option value="todos">Tolos estaos</option>
-            <option value="nuevu">Nuevu</option>
-            <option value="como-nuevu">Como nuevu</option>
-            <option value="bon-estau">Bon estáu</option>
-            <option value="gastau">Gastáu</option>
-          </select>
-
-          <label for="filtro-propiedad">Disponibilidá</label>
-          <select id="filtro-propiedad">
-            <option value="todos">Toos</option>
-            <option value="si">Namái los que tengo</option>
-            <option value="no">Namái los que me falten</option>
-          </select>
-        </div>
-
-        <div class="table-shell">
-          <table>
-            <thead>
-              <tr>
-                <th>Serie</th>
-                <th>Títulu</th>
-                <th>Autor</th>
-                <th>Editorial</th>
-                <th>Estáu</th>
-                <th>Tieneslu</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody id="tabla-bd"></tbody>
-          </table>
-        </div>
-      </section>
-
-      <section class="panel">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Repertoriu</p>
-            <h2>Añadir tienda</h2>
-          </div>
-        </div>
-
-        <form id="form-tienda" class="stack-form">
-          <label for="nombre-tienda">Nome</label>
-          <input type="text" id="nombre-tienda" name="nombre" placeholder="Librairie du Centre" required>
-
-          <label for="direccion-tienda">Direición</label>
-          <input type="text" id="direccion-tienda" name="direccion" placeholder="12 Rue de la BD" required>
-
-          <label for="selector-pais">País</label>
-          <select id="selector-pais" name="pais" required>
-            <option value="">-- Escueye un país --</option>
-          </select>
-
-          <label for="selector-ciudad">Ciudá</label>
-          <select id="selector-ciudad" name="ciudad" required disabled>
-            <option value="">-- Primero escueye país --</option>
-          </select>
-
-          <button type="submit" class="primary-btn">Guardar tienda</button>
-        </form>
-      </section>
-
-      <section id="tiendas" class="panel">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Tiendes</p>
-            <h2>Consulta y borra</h2>
-          </div>
-        </div>
-
-        <div class="filters-grid compact">
-          <label for="filtro-pais">Filtrar por país</label>
-          <select id="filtro-pais">
-            <option value="todos">Tolos países</option>
-          </select>
-
-          <label for="filtro-ciudad">Filtrar por ciudá</label>
-          <select id="filtro-ciudad">
-            <option value="todas">Toles ciudaes</option>
-          </select>
-        </div>
-
-        <ul id="lista-tiendas-guardadas" class="store-list"></ul>
-      </section>
-    </main>
-  </div>
+        <main class="main-grid">
 
 
-  <!-- menu -->
+            <section id="coleccion" class="panel">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Filtros</p>
+                        <h2>Consultar BD</h2>
+                        <ul id="lesbd" class="flex "></ul> <!----los botones top consulta lesbd bd-link----->
+                    </div>
+                </div>
 
-  <div id="menu-app">
-    <nav>
-      <ul>
-        <li>
-          <a href="#">
-            <i class="fa-solid fa-house"></i>
-            <span>Inicio</span>
-          </a>
-        </li>
-        <li>
-          <a href="#tiendas">
-            <i class="fa-solid fa-shop"></i>
-            <span>Tienda</span>
-          </a>
-        </li>
-        <li>
-          <a href="#coleccion">
-            <i class="fa-solid fa-book"></i></i>
-            <span>Colección</span>
-          </a>
-        </li>
+                <div class="filters-grid">
+                    <label for="buscador-bd">Buscar</label>
+                    <input type="search" id="buscador-bd" placeholder="Serie, títulu, autor, editorial...">
 
-      </ul>
-    </nav>
-  </div>
-  <!-- fin de menu -->
+                    <label for="filtro-serie">Serie</label>
+                    <select id="filtro-serie">
+                        <option value="todas">Toles series</option>
+                    </select>
+
+                    <label for="filtro-estado">Estáu</label>
+                    <select id="filtro-estado">
+                        <option value="todos">Tolos estaos</option>
+                        <option value="nuevu">Nuevu</option>
+                        <option value="como-nuevu">Como nuevu</option>
+                        <option value="bon-estau">Bon estáu</option>
+                        <option value="gastau">Gastáu</option>
+                    </select>
+
+                    <label for="filtro-propiedad">Disponibilidá</label>
+                    <select id="filtro-propiedad">
+                        <option value="todos">Toos</option>
+                        <option value="si">Namái los que tengo</option>
+                        <option value="no">Namái los que me falten</option>
+                    </select>
+                    <br><ul>
+                        <li>                    <a href="listado.html" id="btn-cambio-bd" class="btnuno" data-action="guardar-busqueda" aria-label="collecionBD">Cambio</a><!--pagina para modificar -->
+</li>
+                    <li>                    <a href="listbd.html" id="btn-buscar-bd" class="btnuno" data-action="guardar-busqueda" aria-label="collecionBD">Buscar</a><!--pagina para consultar -->
+</li>
+                    <li>                    <a href="nuevabd.html" class="btnuno" aria-label="Añadir BD">Añadir</a>
+</li>
+                    </ul>
+
+                </div>
+
+            </section>
 
 
 
-  <footer>
-    hola
-  </footer>
+            <section id="tiendas" class="panel">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Tiendes</p>
+                        <h2>Mis Tiendas de Cómics</h2>
+                    </div>
+                </div>
 
+	                <div class="filters-grid compact">
+	                    <label for="filtro-sitio">Sitio</label>
+	                    <select id="filtro-sitio" required>
+	                        <option value="">-- Escueye --</option>
+	                        <option value="online">Online</option>
+	                        <option value="fisica">Física</option>
+	                    </select>
+	                    
+	                    <label for="filtro-pais">Filtrar por país</label>
+	                    <select id="filtro-pais">
+	                        <option value="todos">Tolos países</option>
+	                    </select>
 
-  <script src="bdColeccion.js"></script>
-  <script src="app.js"></script>
-</body>
+                    <label for="filtro-ciudad">Filtrar por ciudá</label>
+                    <select id="filtro-ciudad">
+                        <option value="todas">Toles ciudaes</option>
+                    </select>
+	                </div>
+<br>
+	                <ul id="lista-tiendas-guardadas" class="store-list"></ul>
+	                <a href="tiendas.html" id="btn-mostrar-tiendas" class="btnuno" data-action="mostrar-tiendas" aria-label="Mostrar tiendas">Mostrar</a>
+	                <a href="nuevatienda.html" class="btnuno" aria-label="Añadir tienda">Añadir</a>
 
-</html>
+            </section>
+        </main>
+    </div>
+    <!-- menu -->
+
+    <div id="menu-app">
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <i class="fa-solid fa-house" style="color: black;"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="nuevatienda.html">
+                        <i class="fa-solid fa-shop" style="color:black;"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="nuevabd.html">
+                        <i class="fa-solid fa-book" style="color:black;"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="graficos.html">
+                        <i class="fa-solid fa-chart-column" style="color:black;"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!-- fin de menu -->
+    <footer>
+
+    </footer>
+	    <script defer src="bdColeccion.js?v=20260419"></script>
+	    <script defer src="app.js?v=20260419"></script>
+	</body>
+
+	</html>
